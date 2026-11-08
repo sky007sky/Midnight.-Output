@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Midnight Output</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Hind+Siliguri:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#ece4d8;--card:#fff;--cream:#fdf6ef;--ink:#1f1f1f;--mut:#6b6560;--or:#e85d3f;--gr:#1f7a5a;--pk:#fcefec;--bd:#f6e2dc;--in:#fffaf3;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#2a2520;--card:#2b2622;--cream:#1f1b17;--ink:#f3ece4;--mut:#b5aca2;--pk:#3a2c28;--bd:#4a3a34;--in:#2b2622;color-scheme:dark}}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,"Hind Siliguri",system-ui,sans-serif;min-height:100%}
+.bn{background:#1f1f1f;color:#fff;text-align:center;font-weight:700;padding:15px 10px;font-size:16px}
+.nav{display:flex;gap:14px;justify-content:center;padding:10px;font-size:14px;font-weight:600}
+.nav a{color:var(--ink);text-decoration:none;padding:6px 12px;border-radius:99px;background:var(--card)}
+.wrap{max-width:480px;margin:10px auto 120px;padding:0 6px}
+.phone{background:var(--cream);border:8px solid #1f1f1f;border-radius:44px;padding:20px 0;overflow:hidden}
+.pad{padding:0 20px}
+.st{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+.logo{width:68px;height:68px;border-radius:14px;background:#000;color:#fff;display:grid;place-items:center;font-weight:800;font-size:20px}
+.st b{font-size:21px}.vf{color:var(--gr)}.st small{display:block;color:var(--mut);font-size:17px;margin-top:2px}
+.sh{margin-left:auto;width:60px;height:60px;border-radius:16px;border:1px solid var(--bd);background:var(--card);font-size:22px}
+.hero{position:relative;border-radius:30px;background:linear-gradient(90deg,#fbe9e3 18%,#fff 18% 82%,#fbe9e3 82%);overflow:hidden;aspect-ratio:1/1.08;display:grid;place-items:center}
+.hero img{width:100%;height:100%;object-fit:contain}
+.off{position:absolute;top:20px;left:20px;background:var(--gr);color:#fff;font-weight:800;padding:12px 20px;border-radius:99px;font-size:17px}
+.rt{position:absolute;top:20px;right:20px;background:#fff;color:#1f1f1f;font-weight:700;padding:11px 20px;border-radius:99px}
+h1{font-size:30px;line-height:1.3;margin:22px 0 10px;font-weight:800}
+.tg{color:var(--mut);font-size:19px;margin:0 0 20px}
+.pr{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.pr .n{font-size:46px;font-weight:800;color:var(--or)}.pr s{color:var(--mut);font-weight:600;font-size:19px}
+.sv{background:#fde7e0;color:var(--or);font-weight:700;padding:10px 14px;border-radius:99px;font-size:18px}
+.fd{color:var(--mut);font-weight:600;font-size:18px;margin:12px 0 22px}
+.sep{height:14px;background:var(--bg);margin:0}
+.box{background:var(--card);border:1px solid var(--bd);border-radius:26px;padding:26px;margin:20px}
+.box h2{margin:0 0 20px;font-size:28px;font-weight:800}
+.ck{display:flex;align-items:center;gap:16px;font-size:20px;margin:0 0 20px}
+.ck i{flex:none;width:40px;height:40px;border-radius:50%;background:var(--gr);color:#fff;display:grid;place-items:center;font-style:normal;font-size:20px}
+.gal{display:flex;gap:20px;overflow-x:auto;padding:20px}
+.gal div{flex:none;width:230px;height:300px;border-radius:22px;border:1px solid var(--bd);overflow:hidden;position:relative;background:#fff;cursor:pointer}
+.gal div.on{border-color:var(--or)}
+.gal img{width:100%;height:100%;object-fit:cover}
+.gal span{position:absolute;left:14px;bottom:14px;background:rgba(80,80,80,.7);color:#fff;font-weight:700;padding:8px 14px;border-radius:12px}
+.det{font-size:19px;line-height:2.1;white-space:pre-line;font-family:"Hind Siliguri",Inter,sans-serif}
+.rv{display:flex;gap:16px;overflow-x:auto;padding:0 20px 6px}
+.rv>div{flex:none;width:290px;background:var(--card);border:1px solid var(--bd);border-radius:26px;padding:22px;min-height:190px}
+.av{width:68px;height:68px;border-radius:50%;background:var(--or);color:#fff;display:grid;place-items:center;font-weight:800;font-size:24px;float:left;margin-right:14px}
+.rv b{font-size:20px;display:block;margin-top:6px}.rv em{font-style:normal;color:#f5c400;font-weight:700}.rv p{clear:both;color:var(--mut);font-size:19px;margin:14px 0 0}
+.fq{background:var(--pk);border-radius:20px;padding:20px;margin-bottom:14px}
+.fq b{display:block;font-size:19px;margin-bottom:8px}.fq p{margin:0;color:var(--mut);font-size:19px;font-family:"Hind Siliguri",Inter,sans-serif;line-height:1.7}
+label.l{display:block;font-weight:700;margin:18px 0 10px}
+input,select,textarea{width:100%;font:inherit;font-size:20px;padding:20px 22px;border:1px solid var(--bd);border-radius:20px;background:var(--in);color:var(--ink);margin:0 0 14px}
+textarea{min-height:110px}
+.qt{display:flex;align-items:center;justify-content:space-between;background:var(--pk);border-radius:20px;padding:18px 20px;font-weight:800;font-size:20px;margin-bottom:14px}
+.qt button{width:56px;height:56px;border:0;border-radius:14px;background:var(--or);color:#fff;font-size:28px;font-weight:700}
+.qt span{margin:0 22px}
+.opt{display:flex;align-items:center;gap:14px;border:1px solid var(--bd);border-radius:20px;padding:18px 20px;margin-bottom:12px;font-size:19px;font-weight:600;background:var(--in)}
+.opt input{width:26px;height:26px;margin:0;flex:none;accent-color:var(--or)}
+.opt small{display:block;color:var(--mut);font-weight:400;font-size:15px}
+.sum{background:var(--pk);border-radius:20px;padding:24px;margin:6px 0 20px;font-size:20px;color:var(--mut)}
+.sum div{display:flex;justify-content:space-between;margin-bottom:14px}
+.sum .t{border-top:1px dashed var(--bd);padding-top:16px;margin:0;color:var(--ink);font-weight:800;font-size:25px}
+.pay{background:#fff7e8;border:1px dashed var(--or);border-radius:20px;padding:18px;margin-bottom:14px;font-size:17px;line-height:1.6;color:#1f1f1f}
+.btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;border:0;border-radius:22px;background:var(--or);color:#fff;font:800 22px Inter,sans-serif;padding:26px;cursor:pointer;text-decoration:none}
+.btn.sm{width:auto;font-size:15px;padding:10px 16px;border-radius:12px;display:inline-block}
+.btn.g{background:var(--gr)}.btn.gy{background:#8a837c}
+.bar{position:fixed;left:0;right:0;bottom:calc(env(safe-area-inset-bottom,0px) + 14px);max-width:480px;margin:0 auto;display:flex;gap:14px;background:var(--card);border:1px solid var(--bd);border-radius:30px;padding:14px;box-shadow:0 6px 24px #0002;z-index:5}
+.bar a,.bar button{flex:1;text-align:center;padding:20px 8px;border-radius:20px;font:700 20px Inter,sans-serif;border:0;text-decoration:none;cursor:pointer}
+.bar a{background:#f0ebe3;color:#1f1f1f}.bar button{background:var(--or);color:#fff}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:0 20px 10px}
+.grid a{background:var(--card);border:1px solid var(--bd);border-radius:22px;overflow:hidden;text-decoration:none;color:var(--ink)}
+.grid img{width:100%;aspect-ratio:1;object-fit:contain;background:#fff}
+.grid p{margin:10px 12px 4px;font-weight:600;font-size:14px;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.grid b{display:block;margin:0 12px 14px;color:var(--or);font-size:18px}
+.pill{display:inline-block;padding:6px 12px;border-radius:99px;font-size:14px;font-weight:700;background:#eee;color:#333}
+.pill.approved,.pill.delivered{background:#d9f2e7;color:#17684c}.pill.shipping{background:#dfeaff;color:#1d4ca8}.pill.created{background:#fff0c9;color:#8a5a00}.pill.cancelled{background:#fde0e0;color:#a32}
+.steps{display:flex;justify-content:space-between;margin:18px 0 4px;position:relative}
+.steps div{text-align:center;flex:1;font-size:14px;font-weight:600;color:var(--mut)}
+.steps i{display:grid;place-items:center;width:34px;height:34px;margin:0 auto 6px;border-radius:50%;background:#ddd;color:#fff;font-style:normal}
+.steps .d{color:var(--ink)}.steps .d i{background:var(--gr)}
+.tabs{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}
+.tabs button{border:0;border-radius:99px;padding:10px 18px;font:700 16px Inter,sans-serif;background:var(--pk);color:var(--ink)}.tabs .on{background:var(--or);color:#fff}
+.row{border:1px solid var(--bd);border-radius:18px;padding:16px;margin-bottom:12px;font-size:16px;line-height:1.6;background:var(--in)}
+.row .a{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.adm input,.adm textarea,.adm select{font-size:16px;padding:14px;border-radius:14px}
+.adm label{font-weight:700;font-size:14px;display:block;margin:4px 0}
+.note{color:var(--mut);font-size:14px;line-height:1.5}
+body{font-size:14px}
+.bn{font-size:13px;padding:10px;letter-spacing:.04em;font-weight:600}
+.nav a{font-size:13px;cursor:pointer}
+.phone{border-width:6px;border-radius:34px}
+.st b{font-size:16px}.st small{font-size:13px}.logo{width:52px;height:52px;font-size:16px}.sh{width:44px;height:44px;font-size:16px}
+h1{font-size:21px;line-height:1.35;margin:16px 0 8px;font-weight:700}
+.tg{font-size:14px;margin-bottom:14px}.pr .n{font-size:32px}.pr s{font-size:15px}.sv{font-size:13px;padding:7px 11px}.fd{font-size:13px;margin:10px 0 14px}
+.off{font-size:13px;padding:8px 14px;top:14px;left:14px}.rt{font-size:13px;padding:8px 14px;top:14px;right:14px}
+.box{padding:20px;border-radius:20px;margin:16px}.box h2,.sh2{font-size:19px;font-weight:700;margin:0 0 14px}
+.ck{font-size:15px;margin-bottom:14px}.ck i{width:28px;height:28px;font-size:14px}
+.gal{padding:16px}.gal div{width:170px;height:220px}.gal span{font-size:12px;padding:5px 10px}
+.det{font-size:14px;line-height:1.8}
+.rv>div{width:240px;min-height:150px;padding:18px}.av{width:48px;height:48px;font-size:18px}.rv b{font-size:15px}.rv p{font-size:14px}
+.fq b{font-size:15px}.fq p{font-size:14px}
+input,select,textarea{font-size:15px;padding:14px 16px;border-radius:14px}
+.qt{font-size:15px}.qt button{width:42px;height:42px;font-size:22px}
+.opt{font-size:15px;padding:14px 16px}.opt small{font-size:12.5px}
+.sum{font-size:15px}.sum .t{font-size:19px}
+.btn{font-size:16px;padding:17px;border-radius:16px}.btn.sm{font-size:13px;padding:8px 13px}
+.bar a,.bar button{font-size:15px;padding:15px 8px;border-radius:16px}.bar{border-radius:24px;padding:10px;gap:10px}
+.grid p{font-size:13px}.grid b{font-size:15px}.pay{font-size:14px}.steps div{font-size:12px}
+.tb{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px}.tb span{background:var(--card);border:1px solid var(--bd);border-radius:99px;padding:6px 12px;font-size:12.5px;font-weight:600}
+.drw{position:fixed;top:0;right:0;bottom:0;width:min(440px,100%);background:var(--cream);z-index:20;transform:translateX(105%);transition:transform .25s;overflow-y:auto;box-shadow:-8px 0 30px #0004;padding:calc(env(safe-area-inset-top,0px) + 14px) 16px 40px}.drw.on{transform:none}
+.ov{position:fixed;inset:0;background:#0006;z-index:19;display:none}
+.dh{display:flex;justify-content:space-between;align-items:center;font-size:18px;margin-bottom:14px}.dh button{border:0;background:var(--pk);color:var(--ink);width:36px;height:36px;border-radius:50%;font-size:16px}
+.stg{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px}.stg div{background:var(--pk);border-radius:14px;padding:12px;font-size:12px;color:var(--mut)}.stg b{display:block;font-size:18px;color:var(--ink)}
+.drw .box{margin:12px 0!important}.drw .row{background:var(--card)}
+.fq summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:10px;font-weight:700;font-size:15px;cursor:pointer}.fq summary::-webkit-details-marker{display:none}.fq summary::after{content:'▾';color:var(--or);font-size:18px;transition:transform .2s}.fq[open] summary::after{transform:rotate(180deg)}.fq p{margin-top:10px!important}
+.row select{font-size:13px;padding:8px 10px;border-radius:10px}
+.qt{display:none}.addrow{display:flex;gap:10px;margin:0 0 18px}.addrow input{margin:0}.addrow .btn{white-space:nowrap}.cb{width:30px;height:30px;border:0;border-radius:8px;background:var(--or);color:#fff;font-size:18px}
+.fab{position:fixed;right:0;top:45%;z-index:15;background:#1f1f1f;color:#fff;padding:10px 8px;border-radius:14px 0 0 14px;display:grid;place-items:center;font-size:18px;cursor:pointer;box-shadow:0 4px 14px #0004}.fab small{font-size:10px}
+.ci{display:flex;gap:12px;background:var(--in);border:1px solid var(--bd);border-radius:16px;padding:10px;margin-bottom:10px}.ci img{width:56px;height:56px;border-radius:12px;object-fit:cover;background:#fff;flex:none}.ci>div{flex:1;min-width:0}.ci b{font-size:14px}.cp{font-size:13px;color:var(--mut);margin:2px 0 6px}.cc{display:flex;align-items:center;gap:8px}.cc input{margin:0;padding:6px 10px;font-size:13px;flex:1;min-width:0;border-radius:10px}.rm{border:0;background:none;color:var(--mut);font-size:16px}.tag{background:var(--pk);color:var(--or);font-size:11px;font-weight:700;padding:2px 8px;border-radius:99px;margin-left:6px}
+.od summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:8px;cursor:pointer;font-size:15px}.od summary::-webkit-details-marker{display:none}.od summary::after{content:'▾';color:var(--or);margin-left:6px}.od[open] summary::after{transform:rotate(180deg)}.dt{font-size:14px;line-height:1.7;margin-top:10px}.dt hr{border:0;border-top:1px dashed var(--bd);margin:10px 0}
+.ft{text-align:center;padding:18px 8px 0;font-size:13px;color:var(--mut)}.ftl{display:flex;flex-direction:column;gap:10px;align-items:center}.ftl a,.ftl span{display:flex;align-items:center;gap:8px;color:var(--ink);text-decoration:none;font-weight:600}.ft p{margin:12px 0 0;font-size:12px}
+.th{position:relative;display:inline-block;margin:0 8px 8px 0}.th img{width:70px;height:70px;object-fit:cover;border-radius:10px;border:1px solid var(--bd)}.th button{position:absolute;top:-6px;right:-6px;width:22px;height:22px;border:0;border-radius:50%;background:#1f1f1f;color:#fff;font-size:12px}
+#toast{position:fixed;top:20px;left:50%;transform:translateX(-50%);background:#1f1f1f;color:#fff;padding:14px 22px;border-radius:14px;z-index:9;display:none;max-width:90%;font-weight:600}
+</style></head><body>
+<div id="toast"></div>
+<div class="bn" id="bn"></div>
+<div class="nav"><a href="#home" onclick="DONE=false;render()">Shop</a><a onclick="drawer('cart')">🛒 Cart (<span id="cc">0</span>)</a><a onclick="drawer('track')">My Orders</a></div>
+<a id="al" class="fab" onclick="drawer('admin')" style="display:none">⚙<small>Admin</small></a>
+<div class="ov" id="ov" onclick="drawer('')"></div><div class="drw" id="drw"></div>
+<div class="wrap"><div class="phone" id="app"></div><div class="ft" id="ft"></div></div>
+<div class="bar" id="bar" style="display:none"><a id="wa" target="_blank" rel="noopener">WhatsApp</a><button onclick="go()">Order Now</button></div>
+<script>
+const $=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const tk=n=>'৳ '+Number(n||0).toLocaleString('en-US');
+const svg=(c,t)=>'data:image/svg+xml,'+encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><rect width="400" height="400" fill="${t||'#fff'}"/><ellipse cx="200" cy="330" rx="130" ry="16" fill="#0001"/><path d="M70 220a130 110 0 0 0 260 0z" fill="${c}"/><ellipse cx="200" cy="220" rx="130" ry="30" fill="#c9d3d8"/><ellipse cx="200" cy="210" rx="105" ry="22" fill="#eef2f4"/><path d="M95 205v-45a105 30 0 0 1 210 0v45" fill="#dfe6ea"/><ellipse cx="200" cy="160" rx="105" ry="26" fill="#f6f8f9"/><circle cx="200" cy="130" r="14" fill="#fff"/><circle cx="200" cy="285" r="14" fill="#222"/></svg>`);
+const DEF={id:'prestige-75l',title:'7.5L, Prestige Electric Multicooker Multifunctional Rice Cooker Frying Pan Non-stick Cookware Multi Soup Hotpot for Kitchen',tagline:'Best quality product at the best price',price:1299,old:1380,rating:4.8,
+images:[svg('#5fc8e8'),svg('#7ab8d0','#c0392b'),svg('#8fb0b8','#2b3a42')],
+details:'Prestige 7.5L Large Capacity Multifunctional Electric Cooker হলো বড় পরিবার, হোস্টেল বা মেসের জন্য দৈনন্দিন রান্নাকে আরও সহজ ও ঝামেলামুক্ত করার একটি অল-ইন-ওয়ান ইলেকট্রিক কুকার 🍲। এর ৭.৫ লিটার বড় ক্যাপাসিটি এবং ডুয়াল পাওয়ার মোড (600W-1200W) ৩-৫ জন বা তার বেশি মানুষের খাবার একবারে প্রস্তুত করতে সাহায্য করে ✨\nKey Features:\n7.5L Generous Capacity: ৩ থেকে ৫ জন বা তার চেয়ে বড় পরিবারের জন্য একবারে পর্যাপ্ত রান্না করা উপযুক্ত।\nNon-stick Coating: রান্না ও পরিষ্কার করা একদম সহজ।\nSteamer Included: ভাপে সেদ্ধ খাবার তৈরি করা যায়।',
+why:'High quality product\nFast delivery\nCash on delivery available\nEasy replacement support',
+faq:'Is cash on delivery available?|হ্যাঁ, ক্যাশ অন ডেলিভারি সুবিধা আছে। পণ্য হাতে পেয়ে টাকা দিতে পারবেন।\nHow long does delivery take?|ঢাকায় ১-২ দিন এবং ঢাকার বাইরে ২-৪ দিনের মধ্যে ডেলিভারি দেওয়া হয়।\nCan I replace the product?|হ্যাঁ, পণ্যে সমস্যা থাকলে ডেলিভারির সময় চেক করে রিপ্লেসমেন্ট সাপোর্ট পাবেন।\nHow can I pay in advance?|বিকাশ বা নগদ নম্বরে Send Money করে TrxID দিয়ে অর্ডার করুন।',
+reviews:'Rahim|5|Good quality and fast delivery.\nSadia|5|Price was nice. Works perfectly for my family.\nTanvir|4.5|Very easy to clean. Rice cooks well.\nNusrat|5|Packaging was safe. Product is same as picture.\nMehedi|5|Great for hostel use. Highly recommended.\nAyesha|4|Good size for 4 people. Delivery was quick.\nImran|5|Value for money. Will order again.'};
+DEF.details='Prestige 7.5L Large Capacity Multifunctional Electric Cooker makes everyday cooking easy for large families, hostels and shared homes. One pot for rice, soup, frying, steaming and more.\n\nKey features\n• 7.5L capacity: cooks for 3-5 people or more in one go\n• Dual power mode: 600W-1200W\n• Non-stick inner pot: easy to cook, easy to clean\n• Steamer tray, measuring cup and spoon included';
+let DONE=false,DR='',OF='all',QS='',OK=0;
+let UNL=false;
+let S={logo:'MO',badges:'Fast delivery,Cash on delivery,Easy replacement,In stock',fdText:'Fast delivery available across Bangladesh',likeTitle:'You may also like',fb:'',mail:'yt.midnight.output@gmail.com',open:'yes',notice:'',freeAbove:0,minOrder:0,waAuto:'yes',bkash:'01766270051',nagad:'01766270051',wa:'8801616708477',dhaka:80,outside:130,store:'Midnight Output',city:'Dhaka'};
+let P=[DEF],O=[],db=null,usr=null,assets=null,admin=false,dbEmpty=true,tab='orders',edit=null;
+const DIV=['Dhaka','Chattogram','Rajshahi','Khulna','Barishal','Sylhet','Rangpur','Mymensingh'];
+const ST=[['created','Order Created'],['approved','Approved'],['shipping','Shipping'],['delivered','Delivered']];
+const mine=()=>{try{return JSON.parse(localStorage.getItem('mo_my')||'[]')}catch(e){return[]}};
+const toast=m=>{const t=$('#toast');t.textContent=m;t.style.display='block';setTimeout(()=>t.style.display='none',3500)};
+const lines=s=>String(s||'').split('\n').map(x=>x.trim()).filter(Boolean);
+const cur=()=>location.hash.slice(1)||'home';
+const prod=id=>P.find(p=>p.id===id);
+const head=()=>`<div class="pad"><div class="st"><div class="logo">${esc(S.logo)}</div><div><b>${esc(S.store)}</b><small>${esc(S.city)}</small></div><button class="sh" onclick="navigator.share?navigator.share({url:location.href}):0">⤴</button></div></div>`;
+const cards=l=>`<div class="grid">${l.map(p=>`<a href="#p-${esc(p.id)}"><img src="${esc(p.images[0]||svg('#5fc8e8'))}" alt=""><p>${esc(p.title)}</p><b>${tk(p.price)}</b></a>`).join('')}</div>`;
+function homeV(){return head()+`<div class="pad"><h1 style="font-size:28px">All Products</h1></div>`+cards(P)}
+function prodV(p){
+ const off=p.old>p.price?Math.round((p.old-p.price)/p.old*100):0;
+ const rv=lines(p.reviews).slice(0,7).map(x=>{const[a,b,c]=x.split('|');return`<div><div class="av">${esc((a||'?')[0])}</div><b>${esc(a)}</b><em>${esc(b)} Rating</em><p>${esc(c)}</p></div>`}).join('');
+ const fq=lines(p.faq).map(x=>{const[q,...a]=x.split('|');return`<details class="fq"><summary>${esc(q)}</summary><p>${esc(a.join('|'))}</p></details>`}).join('');
+ return head()+`<div class="pad"><div class="hero"><img id="hi" src="${esc(p.images[0]||'')}" alt="">${off?`<div class="off">${off}% OFF</div>`:''}<div class="rt">${p.rating} Rating</div></div>
+ <h1>${esc(p.title)}</h1><p class="tg">${esc(p.tagline)}</p>
+ <div class="pr"><span class="n">${tk(p.price)}</span>${p.old>p.price?`<s>${tk(p.old)}</s><span class="sv">Save ${tk(p.old-p.price)}</span>`:''}</div>
+ <div class="fd">${esc(S.fdText)}</div><div class="tb">${(S.badges||'').split(',').map(x=>x.trim()).filter(Boolean).map(x=>`<span>${esc(x)}</span>`).join('')}</div><div class="addrow"><input id="pc" placeholder="Colour (optional)" oninput="rc()"><button class="btn sm" onclick="addC('${esc(p.id)}')">Add to Cart</button></div></div><div class="sep"></div>
+ <div class="box"><h2>Why choose this product?</h2>${lines(p.why).map(x=>`<div class="ck"><i>✓</i>${esc(x)}</div>`).join('')}</div><div class="sep"></div>
+ <div class="gal">${p.images.map((s,i)=>`<div class="${i?'':'on'}" onclick="$('#hi').src=this.querySelector('img').src;document.querySelectorAll('.gal div').forEach(d=>d.classList.remove('on'));this.classList.add('on')"><img src="${esc(s)}" alt=""><span>Image ${i+1}</span></div>`).join('')}</div><div class="sep"></div>
+ <div class="box"><h2>Product Details</h2><div class="det">${esc(p.details)}</div></div><div class="sep"></div>
+ <div style="padding:20px 0"><h2 class="sh2" style="padding:0 20px">Customer Reviews <span class="note">(${lines(p.reviews).slice(0,7).length}) · ${p.rating} ★</span></h2><div class="rv">${rv}</div></div><div class="sep"></div>
+ <div class="box"><h2>FAQ</h2>${fq}</div><div class="sep"></div>${P.filter(x=>x.id!==p.id).length?'<div class="pad" style="padding-top:20px"><h2 class="sh2">'+esc(S.likeTitle)+'</h2></div>'+cards(P.filter(x=>x.id!==p.id))+'<div class="sep" style="margin-top:14px"></div>':''}
+ <div class="box" id="of"><h2>Complete Your Order</h2><p class="note" style="font-size:16px">Fill in your details. The seller will verify your order.</p>
+ <label class="l">Customer Name</label><input id="cn" placeholder="Customer name">
+ <label class="l">Mobile Number</label><input id="cm" type="tel" inputmode="numeric" maxlength="11" placeholder="01XXXXXXXXX">
+ <label class="l">Full Address</label><textarea id="ca" placeholder="House/road/area/district"></textarea>
+ <select id="dv" onchange="vch()"><option value="">Select division</option>${DIV.map(d=>`<option>${d}</option>`).join('')}</select>
+ <select id="di" onchange="dch()"><option value="">Select district</option></select><select id="up" onchange="uch()"><option value="">Select upazila</option></select><input id="uo" placeholder="Type your upazila / area" style="display:none">
+ <div class="qt"><b>Quantity</b><div style="display:flex;align-items:center"><button onclick="q(-1)">−</button><span id="qv">1</span><button onclick="q(1)">+</button></div></div>
+ <label class="l">Your Cart</label><div id="ci"></div><textarea id="nt" maxlength="300" placeholder="Note for the seller (optional)" style="min-height:70px"></textarea><input id="hp" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;width:1px"><label class="opt"><input type="checkbox" id="od" onchange="upd()">Outside Dhaka</label>
+ <label class="l">Delivery option</label><p class="note" id="rt" style="margin:-4px 0 12px"></p>
+ <label class="opt"><input type="radio" name="dm" value="cod" checked onchange="upd()"><div>Cash on delivery<small>Pay the full amount when you receive the product</small></div></label>
+ <label class="opt"><input type="radio" name="dm" value="dc" onchange="upd()"><div>Pay delivery charge only<small>Pay only the delivery charge now, the rest on delivery</small></div></label>
+ <div id="tm"><label class="l">Payment option</label>
+ <label class="opt"><input type="radio" name="pt" value="before" onchange="upd()">Before payment<small></small></label>
+ <label class="opt"><input type="radio" name="pt" value="after" checked onchange="upd()">After payment</label></div>
+ <div id="gw"><label class="opt"><input type="radio" name="gw" value="bkash" checked onchange="upd()">bKash</label><label class="opt"><input type="radio" name="gw" value="nagad" onchange="upd()">Nagad</label>
+ <div class="pay" id="pi"></div><input id="tx" placeholder="Transaction ID (TrxID)"></div>
+ <div class="sum" id="sm"><div><span id="s1"></span><span id="s1v"></span></div><div><span>Delivery charge</span><span id="s2"></span></div><div class="t"><span>Total</span><span id="s3"></span></div>
+ <div style="margin:14px 0 0;font-size:16px"><span>Pay now: </span><b id="s4"></b> &nbsp; <span>Pay on delivery: </span><b id="s5"></b></div></div>
+ <button class="btn" id="sb" onclick="place('${esc(p.id)}')">Order Now</button></div>`;
+}
+let QTY=1;
+function q(d){QTY=Math.max(1,QTY+d);upd()}
+const V=n=>(document.querySelector('input[name='+n+']:checked')||{}).value;
+function stepper(s){const i=ST.findIndex(x=>x[0]===s);if(s==='cancelled')return'<span class="pill cancelled">Cancelled</span>';return`<div class="steps">${ST.map((x,k)=>`<div class="${k<=i?'d':''}"><i>${k<=i?'✓':k+1}</i>${x[1]}</div>`).join('')}</div>`}
+function trackV(){const l=mine();return `<p class="note">Orders placed from this device/browser are shown here.</p><div id="tl">${l.length?'<div class="box">Loading...</div>':'<div class="box">No orders found on this device.</div>'}</div>`}
+async function loadTrack(){const l=mine();if(!l.length)return;let h='';
+ for(const o of l){let s=o.status,x={};try{if(db){const d=await db.doc('status/'+o.id).get();if(d.exists){x=d.data();s=x.status}else{localStorage.setItem('mo_my',JSON.stringify(mine().filter(x=>x.id!==o.id)));continue}}}catch(e){}
+ h+=`<div class="box" style="margin:14px 20px;padding:20px"><b>${o.id}</b> <span class="note">${new Date(o.t).toLocaleDateString()}</span><div class="note">${esc(o.title)}</div><b>${tk(o.total)}</b>${payLine(x,o)}${stepper(s)}${s==='created'?`<button class="btn sm gy" onclick="delMy('${o.id}')">Delete order</button>`:s==='approved'?`<button class="btn sm gy" onclick="cancelO('${o.id}')">Cancel order</button>`:''}</div>`}
+ const t=$('#tl');if(t)t.innerHTML=h}
+function adminV0(){
+ const T=(k,n)=>`<button class="${tab===k?'on':''}" onclick="tab='${k}';edit=null;render()">${n}</button>`;
+ let b='';
+ if(tab==='orders'){b=ofl()+(O.length?O.filter(fo).sort((a,b)=>b.t-a.t).map(o=>`<div class="row"><b>${o.id}</b> <span class="pill ${o.status}">${o.status==='approved'?'Confirmed':o.status}</span><br>${esc(o.title)} x ${o.qty}<br>${esc(o.name)} · ${esc(o.phone)}<br>${esc(o.addr)}, ${esc(o.upz)}, ${esc(o.dist)}, ${esc(o.div)}<br>Total <b>${tk(o.total)}</b> (delivery ${tk(o.ship)}) · ${o.mode==='dc'?'Delivery charge only':'Cash on delivery'} · ${o.pay} payment<br>Paid now: <b>${tk(o.payNow)}</b> ${o.gw?'via '+o.gw+' · TrxID '+esc(o.trx):''} · Due on delivery: <b>${tk(o.due)}</b>
+ <div class="a"><button class="btn sm g" onclick="setS('${o.id}','approved')">Confirm</button><button class="btn sm" onclick="setS('${o.id}','shipping')">Shipping</button><button class="btn sm gy" onclick="setS('${o.id}','delivered')">Delivered</button><button class="btn sm gy" onclick="setS('${o.id}','cancelled')">Cancel</button><a class="btn sm" target="_blank" rel="noopener" href="https://wa.me/88${o.phone}">Message</a><button class="btn sm gy" onclick="delO('${o.id}')">Delete</button></div></div>`).join(''):'<p class="note">No orders yet.</p>')}
+ else if(tab==='products'){b=edit?editV(edit):`<button class="btn sm g" onclick="edit={...DEF,id:'p'+Date.now().toString(36),title:'',images:[]};render()">+ New product</button><br><br>`+P.map(p=>`<div class="row"><b>${esc(p.title)}</b><br>${tk(p.price)}<div class="a"><button class="btn sm" onclick="edit=prod('${esc(p.id)}');render()">Edit</button><button class="btn sm gy" onclick="delP('${esc(p.id)}')">Delete</button></div></div>`).join('')}
+ else b=`<div class="adm">${[['store','Store name'],['city','City'],['bkash','bKash number (Send Money)'],['nagad','Nagad number (Send Money)'],['wa','WhatsApp number (880...)'],['dhaka','Delivery charge - Dhaka'],['outside','Delivery charge - Outside Dhaka'],['waAuto','Open WhatsApp after order (yes/no)'],['open','Store open for orders (yes/no)'],['notice','Announcement banner (optional)'],['freeAbove','Free delivery above (BDT, 0 = off)'],['minOrder','Minimum order (BDT, 0 = off)'],['fb','Facebook page link (optional)'],['mail','Contact email'],['logo','Logo text (2 letters)'],['badges','Trust badges (comma separated)'],['fdText','Delivery line under price'],['likeTitle','Related products title']].map(([k,n])=>`<label>${n}</label><input id="s_${k}" value="${esc(S[k])}">`).join('')}<br><button class="btn sm g" onclick="saveS()">Save settings</button></div>`;
+ return stats()+`<div class="tabs">${T('orders','Orders ('+O.length+')')}${T('products','Products')}${T('settings','Settings')}${T('reports','Reports')}${T('security','Security')}</div><div class="adm">${b}</div>`}
+async function delP(id){if(!sure('p'+id))return;log('Product '+id+' deleted');try{await db.doc('products/'+id).delete()}catch(e){toast('Failed')}}
+async function setS(id,s){log('Order '+id+' set to '+s);try{await db.doc('orders/'+id).update({status:s});await db.doc('status/'+id).update({status:s,t:Date.now()});toast('Updated')}catch(e){toast('Failed')}}
+function drawer(k){DR=k;edit=null;if(!k)UNL=false;rd()}
+function render(){
+ $('#bn').textContent=S.store+(S.notice?' · '+S.notice:'');$('#wa').href='https://wa.me/'+S.wa;ftr();$('#al').style.display=admin?'':'none';
+ const r=cur(),p=(r.startsWith('p-')&&prod(r.slice(2)))||P[0];
+ if(!DONE)$('#app').innerHTML=prodV(p);rc();$('#bar').style.display=DONE?'none':'flex';rd()}
+const fo=o=>(OF==='all'||o.status===OF)&&(!QS||(o.id+o.name+o.phone).toLowerCase().includes(QS));
+const ofl=()=>`<div style="display:flex;gap:8px;margin-bottom:12px"><select style="margin:0" onchange="OF=this.value;render()">${['all','created','approved','shipping','delivered','cancelled'].map(s=>`<option ${OF===s?'selected':''}>${s}</option>`).join('')}</select><input style="margin:0" placeholder="Search ID, name, phone" value="${esc(QS)}" onchange="QS=this.value.toLowerCase();render()"><button class="btn sm gy" onclick="csv()">CSV</button></div>`;
+const stats=()=>{const rev=O.filter(o=>['approved','shipping','delivered'].includes(o.status)).reduce((a,o)=>a+o.total,0),td=O.filter(o=>new Date(o.t).toDateString()===new Date().toDateString()).length;return`<div class="stg"><div><b>${O.length}</b>Total orders</div><div><b>${O.filter(o=>o.status==='created').length}</b>Pending</div><div><b>${td}</b>Today</div><div><b>${tk(rev)}</b>Confirmed revenue</div></div>`};
+const lab=s=>s==='approved'?'Confirmed':s==='created'?'New':s[0].toUpperCase()+s.slice(1);
+async function cancelO(id){if(!sure('c'+id))return;try{if(db){await db.doc('orders/'+id).update({status:'cancelled'});await db.doc('status/'+id).update({status:'cancelled',t:Date.now()})}const l=mine();l.forEach(x=>{if(x.id===id)x.status='cancelled'});localStorage.setItem('mo_my',JSON.stringify(l));toast('Order cancelled');loadTrack()}catch(e){toast('Could not cancel. Please message on WhatsApp.')}}
+let CART=(()=>{try{return JSON.parse(localStorage.getItem('mo_cart')||'[]')}catch(e){return[]}})(),IT;
+const short=t=>String(t).split(' ').slice(0,4).join(' ');
+const log=a=>{if(db&&admin)db.doc('audit/'+Date.now()+Math.random().toString(36).slice(2,5)).set({a,t:Date.now()}).catch(()=>{})};
+async function saveS(){const n={...S};['store','city','bkash','nagad','wa','waAuto','open','notice','fb','mail','logo','badges','fdText','likeTitle'].forEach(k=>n[k]=$('#s_'+k).value.trim());n.freeAbove=+$('#s_freeAbove').value||0;n.minOrder=+$('#s_minOrder').value||0;n.dhaka=+$('#s_dhaka').value||80;n.outside=+$('#s_outside').value||130;delete n.pin;try{await db.doc('settings/main').set(n);log('Settings saved');toast('Settings saved')}catch(e){toast('Failed')}}
+async function loadAudit(){const el=$('#au');if(!el||!db)return;try{const s=await db.collection('audit').get();const l=s.docs.map(d=>d.data()).sort((a,b)=>b.t-a.t).slice(0,25);el.innerHTML=l.length?l.map(x=>new Date(x.t).toLocaleString()+' - '+esc(x.a)).join('<br>'):'No activity yet.'}catch(e){el.textContent='Unavailable'}}
+const repV=()=>{const ds=[...Array(7)].map((_,i)=>{const d=new Date();d.setDate(d.getDate()-6+i);return{l:d.toLocaleDateString('en',{weekday:'short'}),k:d.toDateString(),n:0}});O.forEach(o=>{const x=ds.find(d=>d.k===new Date(o.t).toDateString());if(x)x.n++});const m=Math.max(1,...ds.map(d=>d.n)),top={};
+ O.filter(o=>o.status!=='cancelled').forEach(o=>(o.items||[]).forEach(i=>top[short(i.title)]=(top[short(i.title)]||0)+i.qty));
+ return `<div class="row"><b>Orders - last 7 days</b><div style="display:flex;align-items:flex-end;gap:6px;margin-top:10px">${ds.map(d=>`<div style="flex:1;text-align:center;font-size:11px"><div style="background:var(--or);height:${Math.round(d.n/m*60)+2}px;border-radius:6px 6px 0 0"></div>${d.n}<br>${d.l}</div>`).join('')}</div></div><div class="row"><b>Top products</b>${Object.entries(top).sort((a,b)=>b[1]-a[1]).slice(0,5).map(([t,n])=>`<br>${esc(t)} · ${n} pcs`).join('')||'<br>No data yet'}</div>`};
+document.addEventListener('click',()=>{if(admin&&DR==='admin'){clearTimeout(IT);IT=setTimeout(()=>{FB.logout()},6e5)}});
+const curP=()=>{const r=cur();return(r.startsWith('p-')&&prod(r.slice(2)))||P[0]};
+function saveC(){localStorage.setItem('mo_cart',JSON.stringify(CART))}
+function cq(i,d){CART[i].qty=Math.max(1,CART[i].qty+d);saveC();rc()}
+function cr(i){CART.splice(i,1);saveC();rc()}
+const waMsg=o=>`New order ${o.id}\n`+o.items.map(i=>`- ${short(i.title)} x${i.qty}${i.color?' ('+i.color+')':''} = ${i.price*i.qty}`).join('\n')+`\nName: ${o.name}\nPhone: ${o.phone}\nAddress: ${o.addr}, ${o.upz}, ${o.dist}, ${o.div}${o.note?'\nNote: '+o.note:''}\nSubtotal: ${o.sub} BDT\nDelivery: ${o.ship} BDT\nTotal: ${o.total} BDT\nPay now: ${o.payNow}${o.gw?' via '+o.gw+' TrxID '+o.trx:''}\nDue on delivery: ${o.due}`;
+async function place(){if(!CART.length)addC(curP().id,true);const c=calc();if($('#hp').value)return;if(!c.it.length)return toast('Your cart is empty. Add a product first.');if(S.open==='no')return toast('Orders are temporarily closed. Please try again later.');if(S.minOrder>0&&c.sub<S.minOrder)return toast('Minimum order is '+tk(S.minOrder)+'.');
+ const n=$('#cn').value.trim().slice(0,80),m=$('#cm').value.trim(),a=$('#ca').value.trim().slice(0,300),tx=$('#tx').value.trim().slice(0,40);
+ if(!n||!/^01\d{9}$/.test(m)||!a||!$('#dv').value||!$('#di').value)return toast('Please fill name, valid mobile (01XXXXXXXXX), address and division.');
+ if(c.now>0&&!tx)return toast('Please enter your payment TrxID.');
+ if(Date.now()-(+localStorage.getItem('mo_lt')||0)<30000)return toast('Please wait a moment before placing another order.');
+ const id='MO'+Date.now().toString(36).toUpperCase()+Math.random().toString(36).slice(2,5).toUpperCase();
+ const items=c.it.map(i=>({pid:i.pid,title:i.p.title,price:Math.round(i.p.price),qty:i.qty,color:(i.color||'').trim()}));
+ const o={id,items,title:items.map(i=>short(i.title)+' x'+i.qty+(i.color?' ('+i.color+')':'')).join(', '),qty:c.n,name:n,phone:m,addr:a,div:$('#dv').value,dist:$('#di').value.slice(0,60),upz:($('#up').value&&$('#up').value!=='__own'?$('#up').value:$('#uo').value).slice(0,60),note:$('#nt').value.trim().slice(0,300),sub:c.sub,ship:c.ship,total:c.tot,mode:c.dm,pay:c.pt,gw:c.now>0?V('gw'):'',trx:tx,payNow:c.now,due:c.due,status:'created',ps:c.now>0?'pending':'none',t:Date.now(),uid:window.FB&&FB.uid()};
+ $('#sb').disabled=true;if(S.waAuto!=='no')window.open('https://wa.me/'+S.wa+'?text='+encodeURIComponent(waMsg(o)),'_blank');
+ try{if(db){await db.doc('orders/'+id).set(o);await db.doc('status/'+id).set({status:'created',t:o.t,ps:o.ps,mode:o.mode,total:o.total,payNow:o.payNow})}else toast('Saved on this device only (shop database offline).')}catch(e){toast('Order could not reach the seller. Please message on WhatsApp.');$('#sb').disabled=false;return}
+ const l=mine();l.unshift({id,title:o.title,total:c.tot,t:o.t,status:'created'});localStorage.setItem('mo_my',JSON.stringify(l.slice(0,30)));localStorage.setItem('mo_lt',Date.now());CART=[];saveC();
+ DONE=true;$('#app').innerHTML=head()+`<div class="box" style="text-align:center"><h2>Order placed ✔</h2><p style="font-size:16px">Order ID: <b>${id}</b><br>Total: <b>${tk(c.tot)}</b></p><p class="note">The seller will verify and confirm your order shortly. Tap below to also send the order details on WhatsApp.</p><a class="btn g" target="_blank" rel="noopener" href="https://wa.me/${S.wa}?text=${encodeURIComponent(waMsg(o))}">Send order on WhatsApp</a><button class="btn gy" style="margin-top:10px" onclick="drawer('track')">Track my order</button><button class="btn gy" style="margin-top:10px" onclick="DONE=false;render()">Continue shopping</button></div>`;scrollTo(0,0);rc()}
+function calc(){const it=used(),sub=it.reduce((a,i)=>a+Math.round(i.p.price)*i.qty,0),od=$('#od'),out=!!(od&&od.checked),fr=+S.freeAbove>0&&sub>=+S.freeAbove,ship=it.length&&!fr?Math.round(out?+S.outside:+S.dhaka):0,tot=sub+ship,dm=V('dm')||'cod',pt=dm==='dc'?'before':(V('pt')||'after'),now=dm==='dc'?ship:(pt==='before'?tot:0);return{it,sub,ship,tot,dm,pt,now,due:tot-now,out,fr,n:it.reduce((a,i)=>a+i.qty,0)}}
+function upd(){if(!$('#sm'))return;const c=calc();$('#rt').textContent='Delivery charge: Dhaka '+tk(S.dhaka)+' · Outside Dhaka '+tk(S.outside)+(+S.freeAbove>0?' · Free above '+tk(S.freeAbove):'');
+ $('#sm').innerHTML=c.it.map(i=>`<div><span>${esc(short(i.p.title))} (${tk(i.p.price)} × ${i.qty})</span><span>${tk(i.p.price*i.qty)}</span></div>`).join('')+`<div style="border-top:1px dashed var(--bd);padding-top:12px"><span>Subtotal (${c.n} item${c.n===1?'':'s'})</span><b>${tk(c.sub)}</b></div><div><span>Delivery charge (${c.out?'Outside Dhaka':'Dhaka'})</span><b>${c.fr?'Free':tk(c.ship)}</b></div><div class="t"><span>Total</span><span>${tk(c.tot)}</span></div><div style="margin-top:14px"><span>Pay now</span><b>${tk(c.now)}</b></div><div style="margin:0"><span>Pay on delivery</span><b>${tk(c.due)}</b></div>`;
+ $('#tm').style.display=c.dm==='dc'?'none':'';$('#gw').style.display=(c.dm==='dc'||c.pt==='before')?'':'none';
+ const g=V('gw')||'bkash',n=g==='nagad'?S.nagad:S.bkash;$('#pi').innerHTML=`Open ${g==='nagad'?'Nagad':'bKash'} → <b>Send Money</b> to <b>${esc(n)}</b><br>Amount: <b>${tk(c.now)}</b><br>Then enter your TrxID below.`}
+function rd(){const d=$('#drw'),o=$('#ov');clearTimeout(IT);if(!DR){d.classList.remove('on');o.style.display='none';return}
+ const T={admin:'Admin Panel',cart:'Your Cart',track:'My Orders'}[DR];
+ d.innerHTML=`<div class="dh"><b>${T}</b><button onclick="drawer('')">✕</button></div>`+(DR==='cart'?cartV():DR==='admin'?(admin?adminV():loginV()):trackV());
+ if(DR==='admin'&&admin){IT=setTimeout(()=>{FB.logout();toast('Signed out (idle)')},6e5);if(tab==='security')loadAudit()}
+ d.classList.add('on');o.style.display='block';if(DR==='track')loadTrack()}
+async function delO(id){if(!sure('d'+id))return;log('Order '+id+' deleted');try{await db.doc('orders/'+id).delete();try{await db.doc('status/'+id).delete()}catch(e){}O=O.filter(o=>o.id!==id);rd();toast('Order deleted')}catch(e){toast('Delete failed')}}
+async function delMy(id){if(!sure('m'+id))return;try{if(db){await db.doc('orders/'+id).delete();try{await db.doc('status/'+id).delete()}catch(e){}}localStorage.setItem('mo_my',JSON.stringify(mine().filter(x=>x.id!==id)));toast('Order deleted');loadTrack()}catch(e){toast('Could not delete. Please message on WhatsApp.')}}
+const armed={};
+function sure(k){if(armed[k]){delete armed[k];return true}armed[k]=1;toast('Tap again to confirm');setTimeout(()=>delete armed[k],4000);return false}
+const BD={Dhaka:['Dhaka','Faridpur','Gazipur','Gopalganj','Kishoreganj','Madaripur','Manikganj','Munshiganj','Narayanganj','Narsingdi','Rajbari','Shariatpur','Tangail'],Chattogram:['Bandarban','Brahmanbaria','Chandpur','Chattogram','Cumilla',"Cox's Bazar",'Feni','Khagrachhari','Lakshmipur','Noakhali','Rangamati'],Rajshahi:['Bogura','Chapainawabganj','Joypurhat','Naogaon','Natore','Pabna','Rajshahi','Sirajganj'],Khulna:['Bagerhat','Chuadanga','Jashore','Jhenaidah','Khulna','Kushtia','Magura','Meherpur','Narail','Satkhira'],Barishal:['Barguna','Barishal','Bhola','Jhalokati','Patuakhali','Pirojpur'],Sylhet:['Habiganj','Moulvibazar','Sunamganj','Sylhet'],Rangpur:['Dinajpur','Gaibandha','Kurigram','Lalmonirhat','Nilphamari','Panchagarh','Rangpur','Thakurgaon'],Mymensingh:['Jamalpur','Mymensingh','Netrokona','Sherpur']};
+const opt=(l,t)=>`<option value="">${t}</option>`+l.map(x=>`<option>${esc(x)}</option>`).join('');
+function vch(){const v=$('#dv').value;$('#di').innerHTML=opt(BD[v]||[],'Select district');$('#up').innerHTML=opt([],'Select upazila');$('#uo').style.display='none';$('#od').checked=!!v&&v!=='Dhaka';upd()}
+function dch(){const d=$('#di').value,l=UP[d]||[];$('#up').innerHTML=opt(l,'Select upazila')+(d?'<option value="__own">Other (type your own)</option>':'');$('#uo').style.display=d&&!l.length?'':'none';if(d)$('#od').checked=d!=='Dhaka';upd()}
+function uch(){$('#uo').style.display=$('#up').value==='__own'?'':'none'}
+const payLine=(x,o)=>{const ps=x.ps||o.ps||'none',tot=x.total||o.total,pn=x.payNow||0,m=x.mode;let t;
+ if(ps==='paid')t=(m==='dc'?'Delivery charge ':'Payment ')+tk(pn)+' paid ✔ · Due on delivery '+tk(tot-pn);
+ else if(ps==='pending')t='Payment '+tk(pn)+' submitted · awaiting seller verification';
+ else if(ps==='rejected')t='Payment could not be verified · Pay '+tk(tot)+' on delivery or contact the seller';
+ else t='Cash on delivery · Pay '+tk(tot)+' on delivery';
+ return`<div class="note" style="margin:6px 0">${t}</div>`};
+async function setPay(id,p){log('Payment '+id+' '+p);try{await db.doc('orders/'+id).update({ps:p});await db.doc('status/'+id).update({ps:p});toast('Payment '+(p==='paid'?'approved':'rejected'))}catch(e){toast('Failed')}}
+const orow=(o,n)=>{const it=o.items||[{title:o.title,qty:o.qty}],ps=o.ps||'none',paid=ps==='paid'?o.payNow:0,
+ pay=o.payNow>0?`${esc(o.gw)} · TrxID <b>${esc(o.trx)}</b> · ${tk(o.payNow)}<br>Payment: <span class="pill ${ps==='paid'?'approved':ps==='rejected'?'cancelled':'created'}">${ps==='paid'?'Approved':ps==='rejected'?'Rejected':'Pending'}</span><div class="a"><button class="btn sm g" onclick="setPay('${o.id}','paid')">Approve</button><button class="btn sm gy" onclick="setPay('${o.id}','rejected')">Reject</button></div>`:'Cash on delivery · After payment';
+ return`<details class="row od"><summary><span><b>#${n}</b> ${esc(o.name)}</span><span class="pill ${o.status}">${lab(o.status)}</span></summary><div class="dt">${it.map(i=>esc(short(i.title))+' × '+i.qty+(i.color?' · Colour: '+esc(i.color):'')).join('<br>')}<br>Phone: ${esc(o.phone)}<br>Address: ${esc(o.addr)}, ${esc(o.upz||'')}, ${esc(o.dist)}, ${esc(o.div)}${o.note?'<br>Note: '+esc(o.note):''}${warn(o)}<hr>Subtotal ${tk(o.total-o.ship)} · Delivery ${tk(o.ship)} · <b>Total ${tk(o.total)}</b><br>${pay}<br>Due on delivery: <b>${tk(o.total-paid)}</b><div class="a"><button class="btn sm g" onclick="setS('${o.id}','approved')">Confirm</button><select style="width:auto;margin:0" onchange="setS('${o.id}',this.value)">${ST.concat([['cancelled','Cancelled']]).map(s=>`<option value="${s[0]}" ${o.status===s[0]?'selected':''}>${s[1]}</option>`).join('')}</select><a class="btn sm" target="_blank" rel="noopener" href="https://wa.me/88${esc(o.phone)}">Message</a><button class="btn sm gy" onclick="delO('${o.id}')">Delete</button></div></div></details>`};
+function adminV(){if(tab==='products'||tab==='settings')return adminV0();
+ const T=(k,n)=>`<button class="${tab===k?'on':''}" onclick="tab='${k}';edit=null;render()">${n}</button>`,sr={};
+ [...O].sort((a,b)=>a.t-b.t).forEach((o,i)=>sr[o.id]=i+1);
+ const l=O.filter(fo).sort((a,b)=>sr[b.id]-sr[a.id]);
+ return stats()+`<div class="tabs">${T('orders','Orders ('+O.length+')')}${T('products','Products')}${T('settings','Settings')}${T('reports','Reports')}${T('security','Security')}</div>`+(tab==='reports'?repV():tab==='security'?secV():ofl()+(l.length?l.map(o=>orow(o,sr[o.id])).join(''):'<p class="note">No orders yet.</p>'))}
+function ftr(){const f=$('#ft');if(!f)return;
+ const fb='<svg width="22" height="22" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#1877f2"/><path fill="#fff" d="M13.4 19v-6.2h2.1l.3-2.5h-2.4V8.8c0-.7.2-1.2 1.2-1.2h1.3V5.4c-.2 0-1-.1-1.9-.1-1.9 0-3.2 1.2-3.2 3.3v1.7H8.7v2.5h2.1V19z"/></svg>',
+ gm='<svg width="22" height="22" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2.5" fill="#fff" stroke="#ddd"/><path d="M3 7l9 6.5L21 7" fill="none" stroke="#ea4335" stroke-width="2"/></svg>';
+ f.innerHTML=`<div class="ftl">${S.fb?`<a href="${esc(S.fb)}" target="_blank" rel="noopener">${fb} ${esc(S.store)}</a>`:`<span>${fb} ${esc(S.store)}</span>`}<a href="mailto:${esc(S.mail)}">${gm} ${esc(S.mail)}</a></div><p>© ${new Date().getFullYear()} ${esc(S.store)}</p>`}
+const UPS={Dhaka:'Dhaka City,Dhamrai,Dohar,Keraniganj,Nawabganj,Savar',Faridpur:'Alfadanga,Bhanga,Boalmari,Charbhadrasan,Faridpur Sadar,Madhukhali,Nagarkanda,Sadarpur,Saltha',Gazipur:'Gazipur Sadar,Kaliakair,Kaliganj,Kapasia,Sreepur',Gopalganj:'Gopalganj Sadar,Kashiani,Kotalipara,Muksudpur,Tungipara',Kishoreganj:'Austagram,Bajitpur,Bhairab,Hossainpur,Itna,Karimganj,Katiadi,Kishoreganj Sadar,Kuliarchar,Mithamain,Nikli,Pakundia,Tarail',Madaripur:'Dasar,Kalkini,Madaripur Sadar,Rajoir,Shibchar',Manikganj:'Daulatpur,Ghior,Harirampur,Manikganj Sadar,Saturia,Shivalaya,Singair',Munshiganj:'Gazaria,Lohajang,Munshiganj Sadar,Serajdikhan,Sreenagar,Tongibari',Narayanganj:'Araihazar,Bandar,Narayanganj Sadar,Rupganj,Sonargaon',Narsingdi:'Belabo,Monohardi,Narsingdi Sadar,Palash,Raipura,Shibpur',Rajbari:'Baliakandi,Goalanda,Kalukhali,Pangsha,Rajbari Sadar',Shariatpur:'Bhedarganj,Damudya,Gosairhat,Naria,Shariatpur Sadar,Zajira',Tangail:'Basail,Bhuapur,Delduar,Dhanbari,Ghatail,Gopalpur,Kalihati,Madhupur,Mirzapur,Nagarpur,Sakhipur,Tangail Sadar',
+Bandarban:'Alikadam,Bandarban Sadar,Lama,Naikhongchhari,Rowangchhari,Ruma,Thanchi',Brahmanbaria:'Akhaura,Ashuganj,Bancharampur,Bijoynagar,Brahmanbaria Sadar,Kasba,Nabinagar,Nasirnagar,Sarail',Chandpur:'Chandpur Sadar,Faridganj,Haimchar,Haziganj,Kachua,Matlab Dakshin,Matlab Uttar,Shahrasti',Chattogram:'Chattogram City,Anwara,Banshkhali,Boalkhali,Chandanaish,Fatikchhari,Hathazari,Karnaphuli,Lohagara,Mirsharai,Patiya,Rangunia,Raozan,Sandwip,Satkania,Sitakunda',Cumilla:'Barura,Brahmanpara,Burichang,Chandina,Chauddagram,Cumilla Adarsha Sadar,Cumilla Sadar Dakshin,Daudkandi,Debidwar,Homna,Laksam,Lalmai,Meghna,Monohargonj,Muradnagar,Nangalkot,Titas',"Cox's Bazar":"Chakaria,Cox's Bazar Sadar,Eidgaon,Kutubdia,Maheshkhali,Pekua,Ramu,Teknaf,Ukhia",Feni:'Chhagalnaiya,Daganbhuiyan,Feni Sadar,Fulgazi,Parshuram,Sonagazi',Khagrachhari:'Dighinala,Guimara,Khagrachhari Sadar,Lakshmichhari,Mahalchhari,Manikchhari,Matiranga,Panchhari,Ramgarh',Lakshmipur:'Kamalnagar,Lakshmipur Sadar,Raipur,Ramganj,Ramgati',Noakhali:'Begumganj,Chatkhil,Companiganj,Hatiya,Kabirhat,Noakhali Sadar,Senbagh,Sonaimuri,Subarnachar',Rangamati:'Baghaichhari,Barkal,Belaichhari,Juraichhari,Kaptai,Kawkhali,Langadu,Naniarchar,Rajasthali,Rangamati Sadar',
+Bogura:'Adamdighi,Bogura Sadar,Dhunat,Dhupchanchia,Gabtali,Kahaloo,Nandigram,Sariakandi,Shajahanpur,Sherpur,Shibganj,Sonatala',Chapainawabganj:'Bholahat,Gomastapur,Nachole,Nawabganj Sadar,Shibganj',Joypurhat:'Akkelpur,Joypurhat Sadar,Kalai,Khetlal,Panchbibi',Naogaon:'Atrai,Badalgachhi,Dhamoirhat,Mahadebpur,Manda,Naogaon Sadar,Niamatpur,Patnitala,Porsha,Raninagar,Sapahar',Natore:'Bagatipara,Baraigram,Gurudaspur,Lalpur,Naldanga,Natore Sadar,Singra',Pabna:'Atgharia,Bera,Bhangura,Chatmohar,Faridpur,Ishwardi,Pabna Sadar,Santhia,Sujanagar',Rajshahi:'Rajshahi City,Bagha,Bagmara,Charghat,Durgapur,Godagari,Mohanpur,Paba,Puthia,Tanore',Sirajganj:'Belkuchi,Chauhali,Kamarkhanda,Kazipur,Raiganj,Shahjadpur,Sirajganj Sadar,Tarash,Ullahpara',
+Bagerhat:'Bagerhat Sadar,Chitalmari,Fakirhat,Kachua,Mollahat,Mongla,Morrelganj,Rampal,Sarankhola',Chuadanga:'Alamdanga,Chuadanga Sadar,Damurhuda,Jibannagar',Jashore:'Abhaynagar,Bagherpara,Chaugachha,Jashore Sadar,Jhikargachha,Keshabpur,Manirampur,Sharsha',Jhenaidah:'Harinakunda,Jhenaidah Sadar,Kaliganj,Kotchandpur,Maheshpur,Shailkupa',Khulna:'Khulna City,Batiaghata,Dacope,Dighalia,Dumuria,Koyra,Paikgachha,Phultala,Rupsha,Terokhada',Kushtia:'Bheramara,Daulatpur,Khoksa,Kumarkhali,Kushtia Sadar,Mirpur',Magura:'Magura Sadar,Mohammadpur,Shalikha,Sreepur',Meherpur:'Gangni,Meherpur Sadar,Mujibnagar',Narail:'Kalia,Lohagara,Narail Sadar,Naragati',Satkhira:'Assasuni,Debhata,Kalaroa,Kaliganj,Satkhira Sadar,Shyamnagar,Tala',
+Barguna:'Amtali,Bamna,Barguna Sadar,Betagi,Patharghata,Taltali',Barishal:'Agailjhara,Babuganj,Bakerganj,Banaripara,Barishal Sadar,Gaurnadi,Hizla,Mehendiganj,Muladi,Wazirpur',Bhola:'Bhola Sadar,Burhanuddin,Char Fasson,Daulatkhan,Lalmohan,Manpura,Tazumuddin',Jhalokati:'Jhalokati Sadar,Kathalia,Nalchity,Rajapur',Patuakhali:'Bauphal,Dashmina,Dumki,Galachipa,Kalapara,Mirzaganj,Patuakhali Sadar,Rangabali',Pirojpur:'Bhandaria,Kawkhali,Mathbaria,Nazirpur,Nesarabad,Pirojpur Sadar,Zianagar',
+Habiganj:'Ajmiriganj,Bahubal,Baniachong,Chunarughat,Habiganj Sadar,Lakhai,Madhabpur,Nabiganj,Sayestaganj',Moulvibazar:'Barlekha,Juri,Kamalganj,Kulaura,Moulvibazar Sadar,Rajnagar,Sreemangal',Sunamganj:'Bishwamvarpur,Chhatak,Dakshin Sunamganj,Derai,Dharampasha,Dowarabazar,Jagannathpur,Jamalganj,Sullah,Sunamganj Sadar,Tahirpur',Sylhet:'Balaganj,Beanibazar,Bishwanath,Companiganj,Dakshin Surma,Fenchuganj,Golapganj,Gowainghat,Jaintiapur,Kanaighat,Osmani Nagar,Sylhet Sadar,Zakiganj',
+Dinajpur:'Birampur,Birganj,Biral,Bochaganj,Chirirbandar,Dinajpur Sadar,Ghoraghat,Hakimpur,Kaharole,Khansama,Nawabganj,Parbatipur,Phulbari',Gaibandha:'Fulchhari,Gaibandha Sadar,Gobindaganj,Palashbari,Sadullapur,Saghata,Sundarganj',Kurigram:'Bhurungamari,Char Rajibpur,Chilmari,Kurigram Sadar,Nageshwari,Phulbari,Rajarhat,Raomari,Ulipur',Lalmonirhat:'Aditmari,Hatibandha,Kaliganj,Lalmonirhat Sadar,Patgram',Nilphamari:'Dimla,Domar,Jaldhaka,Kishoreganj,Nilphamari Sadar,Saidpur',Panchagarh:'Atwari,Boda,Debiganj,Panchagarh Sadar,Tetulia',Rangpur:'Badarganj,Gangachhara,Kaunia,Mithapukur,Pirgachha,Pirganj,Rangpur Sadar,Taraganj',Thakurgaon:'Baliadangi,Haripur,Pirganj,Ranisankail,Thakurgaon Sadar',
+Jamalpur:'Baksiganj,Dewanganj,Islampur,Jamalpur Sadar,Madarganj,Melandaha,Sarishabari',Mymensingh:'Bhaluka,Dhobaura,Fulbaria,Gaffargaon,Gauripur,Haluaghat,Ishwarganj,Muktagachha,Mymensingh Sadar,Nandail,Phulpur,Tarakanda,Trishal',Netrokona:'Atpara,Barhatta,Durgapur,Kalmakanda,Kendua,Khaliajuri,Madan,Mohanganj,Netrokona Sadar,Purbadhala',Sherpur:'Jhenaigati,Nakla,Nalitabari,Sherpur Sadar,Sreebardi'};
+const UP=Object.fromEntries(Object.entries(UPS).map(([k,v])=>[k,v.split(',')]));
+const items=()=>{const c=CART.filter(i=>prod(i.pid)).map((i,k)=>({...i,p:prod(i.pid),k}));if(c.length)return c;const p=curP();return[{pid:p.id,qty:1,color:(($('#pc')||{}).value||'').trim(),p,pv:1}]};
+const used=()=>items();
+const row=i=>i.pv?`<div class="ci"><img src="${esc(i.p.images[0]||'')}" alt=""><div><b>${esc(short(i.p.title))}</b><span class="tag">Preview</span><div class="cp">${tk(i.p.price)} × 1 = <b>${tk(i.p.price)}</b></div><div class="note" style="font-size:12px">Tap Order Now or Add to Cart to put this in your cart.</div></div></div>`:`<div class="ci"><img src="${esc(i.p.images[0]||'')}" alt=""><div><b>${esc(short(i.p.title))}</b><div class="cp">${tk(i.p.price)} × ${i.qty} = <b>${tk(i.p.price*i.qty)}</b></div><div class="cc"><button class="cb" onclick="cq(${i.k},-1)">−</button><b>${i.qty}</b><button class="cb" onclick="cq(${i.k},1)">+</button><input placeholder="Colour" maxlength="40" value="${esc(i.color)}" oninput="CART[${i.k}].color=this.value.trim();saveC()"><button class="rm" onclick="cr(${i.k})">✕</button></div></div></div>`;
+const rows=()=>items().map(row).join('');
+const cartV=()=>{if(!CART.length)return`<p class="note">Your cart is empty.</p><button class="btn" onclick="addC(curP().id)">Add this product</button>`;const c=calc();return`<p class="note">Open another product and tap Add to Cart to order more together.</p>${rows()}<div class="sum" style="font-size:14px"><div><span>Subtotal (${c.n} item${c.n===1?'':'s'})</span><b>${tk(c.sub)}</b></div><div><span>Delivery (${c.out?'Outside Dhaka':'Dhaka'})</span><b>${c.fr?'Free':tk(c.ship)}</b></div><div class="t"><span>Total</span><span>${tk(c.tot)}</span></div></div><button class="btn" onclick="drawer('');go()">Checkout</button>`};
+function addC(pid,quiet){const c=(($('#pc')||{}).value||'').trim().slice(0,40),x=CART.find(i=>i.pid===pid&&i.color===c);x?x.qty++:CART.push({pid,qty:1,color:c});saveC();rc();if(!quiet)toast('Added to cart. Open another product to add more.')}
+function go(){if(!CART.length)addC(curP().id,true);const f=$('#of');if(f)f.scrollIntoView({behavior:'smooth'})}
+function rc(){CART=CART.filter(i=>prod(i.pid));if($('#cc'))$('#cc').textContent=CART.reduce((a,i)=>a+i.qty,0);const el=$('#ci');if(el)el.innerHTML=rows();upd();if(DR==='cart')rd()}
+const ADMIN_EMAIL='yt.midnight.output@gmail.com';
+let EI=[],EID='',started=0,osub=null;
+const loginV=()=>`<p class="note">Admin login</p><input id="ae" type="email" placeholder="Email" autocomplete="username"><input id="ap" type="password" placeholder="Password" autocomplete="current-password"><button class="btn" onclick="doLogin()">Sign in</button>`;
+async function doLogin(){try{await FB.login($('#ae').value.trim(),$('#ap').value);toast('Signed in')}catch(e){toast('Login failed. Check email and password.')}}
+const secV=()=>`<div class="row"><b>Account</b><p class="note">Signed in as ${esc(ADMIN_EMAIL)}. Auto sign-out after 10 minutes idle.</p><div class="a"><button class="btn sm g" onclick="FB.reset(ADMIN_EMAIL).then(()=>toast('Reset email sent')).catch(()=>toast('Failed'))">Send password reset email</button><button class="btn sm gy" onclick="FB.logout()">Sign out</button></div></div><div class="row"><b>Activity log</b><div id="au" class="note">Loading...</div></div>`;
+async function csv(){const h='id,date,name,phone,address,division,product,qty,total,paid_now,due,gateway,trx,status',r=O.map(o=>[o.id,new Date(o.t).toISOString(),o.name,o.phone,o.addr,o.div,o.title,o.qty,o.total,o.payNow,o.due,o.gw,o.trx,o.status].map(v=>'"'+String(v??'').replace(/"/g,'""')+'"').join(',')),a=document.createElement('a');a.href=URL.createObjectURL(new Blob(['\ufeff'+[h,...r].join('\n')],{type:'text/csv'}));a.download='orders.csv';a.click()}
+const warn=o=>{const bad=(o.items||[]).some(i=>{const p=prod(i.pid);return p&&Math.round(p.price)!==i.price})||(o.items&&o.total!==o.items.reduce((a,i)=>a+i.price*i.qty,0)+o.ship);return bad?'<div class="pill cancelled" style="margin:6px 0">Warning: price or total differs from current prices. Verify before confirming.</div>':''};
+function sync(){['title','tagline','price','old','rating','details','why','faq','reviews'].forEach(k=>{const e=$('#e_'+k);if(e)edit[k]=e.value})}
+function shrink(f){return new Promise((ok,no)=>{const r=new FileReader();r.onload=()=>{const im=new Image();im.onload=()=>{const k=Math.min(1,900/Math.max(im.width,im.height)),c=document.createElement('canvas');c.width=Math.round(im.width*k);c.height=Math.round(im.height*k);c.getContext('2d').drawImage(im,0,0,c.width,c.height);ok(c.toDataURL('image/jpeg',.75))};im.onerror=no;im.src=r.result};r.onerror=no;r.readAsDataURL(f)})}
+async function upImg(el){sync();for(const f of el.files){try{EI.push(await shrink(f))}catch(e){toast('Could not read an image')}}rd()}
+function addUrl(){sync();const u=$('#iu').value.trim();if(/^https?:\/\//.test(u))EI.push(u);rd()}
+function editV(p){if(EID!==p.id){EID=p.id;EI=[...(p.images||[])]}
+ const f=(k,n,t)=>`<label>${n}</label>${t?`<textarea id="e_${k}" style="min-height:${t}px">${esc(p[k])}</textarea>`:`<input id="e_${k}" value="${esc(p[k])}">`}`;
+ return `${f('title','Title',70)}${f('tagline','Tagline')}${f('price','Price')}${f('old','Old price')}${f('rating','Rating')}
+ <label>Images (first is the main image)</label><div>${EI.map((s,i)=>`<span class="th"><img src="${esc(s)}" alt=""><button onclick="sync();EI.splice(${i},1);rd()">✕</button></span>`).join('')}</div>
+ <input type="file" accept="image/*" multiple onchange="upImg(this)"><div style="display:flex;gap:8px"><input id="iu" placeholder="or paste image link (https://...)"><button class="btn sm" onclick="addUrl()">Add</button></div>
+ ${f('details','Product details',160)}${f('why','Why choose (one per line)',90)}${f('faq','FAQ: Question|Answer (one per line)',130)}${f('reviews','Reviews: Name|Rating|Text (one per line, 5-7)',150)}
+ <div class="a" style="display:flex;gap:8px;margin-top:10px"><button class="btn sm g" onclick="saveP()">Save product</button><button class="btn sm gy" onclick="EID='';edit=null;rd()">Cancel</button></div>`}
+async function saveP(){sync();const g=k=>edit[k],p={...edit,title:g('title'),tagline:g('tagline'),price:+g('price')||0,old:+g('old')||0,rating:+g('rating')||5,images:EI.length?EI:[svg('#5fc8e8')],details:g('details'),why:g('why'),faq:g('faq'),reviews:g('reviews')};
+ if(!p.title.trim())return toast('Please enter a title');if(JSON.stringify(p).length>900000)return toast('Images are too large. Remove one or two.');
+ try{if(dbEmpty&&p.id!==DEF.id)await db.doc('products/'+DEF.id).set(DEF);await db.doc('products/'+p.id).set(p);log('Product '+p.id+' saved');EID='';edit=null;toast('Saved');render()}catch(e){toast('Save failed: '+(e.message||e))}}
+window.boot=function(u){db=window.FBdb;admin=!!u&&!u.isAnonymous&&(u.email||'').toLowerCase()===ADMIN_EMAIL;
+ if(!started){started=1;
+  db.collection('products').onSnapshot(s=>{dbEmpty=s.empty;if(!s.empty)P=s.docs.map(d=>({id:d.id,...d.data()}));else P=[DEF];if(!edit)render()});
+  db.doc('settings/main').onSnapshot(d=>{if(d.exists){S={...S,...d.data()};if(!edit)render()}})}
+ if(admin&&!osub)osub=db.collection('orders').onSnapshot(s=>{if(OK)s.docChanges().forEach(c=>{if(c.type==='added')toast('New order: '+c.doc.data().id)});OK=1;O=s.docs.map(d=>d.data());if(!edit&&DR==='admin')rd()});
+ if(!admin&&osub){osub();osub=null;O=[];OK=0}
+ render();if(cur()==='admin'&&!DR)drawer('admin')};
+window.addEventListener('hashchange',()=>{edit=null;DONE=false;render();if(cur()==='admin')drawer('admin');scrollTo(0,0)});
+render();
+
+
+</script>
+<script type="module">
+import {initializeApp} from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+import {getFirestore,doc,getDoc,setDoc,updateDoc,deleteDoc,collection,onSnapshot,getDocs} from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
+import {getAuth,onAuthStateChanged,signInAnonymously,signInWithEmailAndPassword,signOut,sendPasswordResetEmail} from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
+const app=initializeApp({apiKey:"AIzaSyD8np8rqcjjRg7PQK4m593F75j16kVS6X4",authDomain:"midnight-output.firebaseapp.com",projectId:"midnight-output",storageBucket:"midnight-output.firebasestorage.app",messagingSenderId:"364757639016",appId:"1:364757639016:web:11159a91122862297cc0dd"});
+const fs=getFirestore(app),au=getAuth(app);
+const W=d=>({id:d.id,exists:d.exists(),data:()=>d.data()});
+const st=p=>p.startsWith('status/'),M=p=>st(p)?'orders/'+p.slice(7):p;
+window.FBdb={
+ doc:p=>({get:async()=>W(await getDoc(doc(fs,M(p)))),set:async v=>st(p)?0:setDoc(doc(fs,p),v),update:async v=>st(p)?0:updateDoc(doc(fs,p),v),delete:async()=>st(p)?0:deleteDoc(doc(fs,p)),onSnapshot:cb=>onSnapshot(doc(fs,p),d=>cb(W(d)),e=>console.warn(e))}),
+ collection:p=>({onSnapshot:cb=>onSnapshot(collection(fs,p),s=>cb({empty:s.empty,docs:s.docs.map(W),docChanges:()=>s.docChanges().map(c=>({type:c.type,doc:W(c.doc)}))}),e=>console.warn(e)),get:async()=>{const s=await getDocs(collection(fs,p));return{empty:s.empty,docs:s.docs.map(W)}}})};
+window.FB={login:(e,p)=>signInWithEmailAndPassword(au,e,p),logout:()=>signOut(au),reset:e=>sendPasswordResetEmail(au,e),uid:()=>au.currentUser&&au.currentUser.uid};
+onAuthStateChanged(au,u=>{if(!u){signInAnonymously(au).catch(e=>{console.warn(e);window.boot(null)});return}window.boot(u)});
+</script></body></html>
